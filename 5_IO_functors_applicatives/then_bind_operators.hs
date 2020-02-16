@@ -62,3 +62,11 @@ withoutDoTwoQuestions = putStr "What is your name? "
                         >>= \l1 -> putStr "How old are you? "
                                     >> getLine
                                     >>= \l2 -> print (l1, l2)
+
+getLine' :: IO String
+getLine' = do 
+    c <- getChar
+    if c == '\n' then return ""
+    else do 
+        cs <- getLine'
+        return (c:cs)

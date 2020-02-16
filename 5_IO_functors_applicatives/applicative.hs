@@ -21,3 +21,10 @@ fun = putStrLn "Podaj Imię "
     >> getLine
     >>= \n -> let line = read n :: String in
         putStrLn $ "Witaj: " ++ n
+
+-- instance Applicative ((->) r) where
+--     pure x = (\_ -> x)
+--     f <*> g = \x -> f x (g x)
+
+(+.) :: (Num x) => ((->) x ((->) x x))
+a +. b = a + b

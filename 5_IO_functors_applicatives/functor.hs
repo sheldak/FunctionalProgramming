@@ -16,3 +16,6 @@ data Tree a = Empty | Node a (Tree a) (Tree a) deriving (Show, Functor)
 -- instance Functor Tree where
 --     fmap _ Empty         = Empty
 --     fmap f (Node x xs xss) = Node (f x) (fmap f xs) (fmap f xss)
+
+-- instance Functor ((->) r) where
+--     fmap f g = (\x -> f (g x))
